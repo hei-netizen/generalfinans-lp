@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><!-- preview-subdomene: fjern hvis dette blir produksjons-LP -->
+<title>Næringsleasing av maskiner og utstyr — General Finans</title>
+<meta name="description" content="Lease maskiner og utstyr til bedriften uten egenkapital. Personlig rådgiver, ofte kredittsvar innen én virkedag, og tilbud fra flere finansieringskilder. Næringsleasing siden 2006.">
+<link rel="icon" href="https://generalfinans.no/wp-content/uploads/2022/03/cropped-klosser-logo-gf-192x192.jpg">
+<!-- ============================================================
+     GENERAL FINANS — leasingtilbud v2 (Frøyd-clone-struktur, aug 2026)
+     Samme mal som Badstugutta/Marlow/UR/Veldig Rent — GF-grønn palett.
+     ETT-STEGS skjema (Victors beslutning 14.08.2026 — ikke multi-steg).
+     All copy, claims og skjemafelt er VERBATIM fra v1 (leasingtilbud.html,
+     kilder: Robin-møtet 16.06.2026 + daværende live-side). Ingen nye claims.
+     Sporing/lead-flyt UENDRET fra v1: gtag AW-11125165332 + Consent Mode v2,
+     gclid-fangst, Zapier- + Make-webhook (samme payload-nøkler), redirect
+     til /takk/ med klikk-ID-er. Se NOTES.md.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Ads-tag (gtag.js) + Consent Mode v2.
+     Standalone LP uten Cookiebot → consent-defaults 'denied' gir cookieless pings;
+     Google attribuerer via gclid i URL + modellering. url_passthrough tar med
+     klikk-ID i interne lenker uten cookies. Consent-default MÅ ligge før config. -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+gtag('set','url_passthrough',true);
+gtag('js',new Date());
+gtag('config','AW-11125165332');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11125165332"></script>
+<style>
+:root{
+  /* ===== GF-palett (fra v1) på Frøyd-malens komponenter ===== */
+  --green:#76af26; --green-deep:#5e8e1e; --green-dark:#15301f; --green-tint:#eef7e2;
+  --mint:#cfe8a3; --gold:#e8a70f; --red:#c0584a;
+  --cream:#f6f7f4; --sand:#fbfcfa; --white:#fff;
+  --ink:#1b2a1d; --ink2:#22371f; --muted:#5d6a59; --line:#e5e9e0;
+  --mont:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --r:18px; --rs:14px; --pill:999px;
+  --sh:0 24px 54px -32px rgba(20,40,25,.42);
+  --sh-sm:0 14px 30px -22px rgba(20,40,25,.32);
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:var(--mont);color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-weight:800;line-height:1.08;letter-spacing:-0.01em;overflow-wrap:break-word}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:64px 0}
+@media(max-width:760px){.section{padding:44px 0}}
+.eyebrow{display:inline-block;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green-deep)}
+.eyebrow.muted{color:var(--muted)}
+.h-xl{font-size:clamp(1.95rem,4.4vw,3.0rem)}
+.h-lg{font-size:clamp(1.6rem,3.1vw,2.3rem)}
+.lede{font-size:1.04rem;color:var(--muted);max-width:56ch}
+.center{text-align:center}
+
+/* ---- CTA-pill (Frøyd: bold tekst + sirkulær pil + subtekst) ---- */
+.cta{display:inline-flex;flex-direction:column;align-items:center;gap:2px;background:var(--green);color:#fff;border:0;cursor:pointer;border-radius:var(--pill);padding:16px 40px;line-height:1.15;font-family:var(--mont);transition:.2s;box-shadow:0 16px 30px -18px rgba(94,142,30,.6)}
+.cta:hover{background:var(--green-deep);transform:translateY(-2px)}
+.cta .t{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.cta .t .arw{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.22);display:inline-flex;align-items:center;justify-content:center}
+.cta .t .arw svg{width:13px;height:13px}
+.cta .sub{font-size:0.74rem;font-weight:500;opacity:.85}
+.cta.lg{padding:18px 48px}
+.cta.lg .t{font-size:1.14rem}
+.btn-soft{display:inline-flex;align-items:center;gap:9px;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:var(--pill);padding:13px 24px;font-weight:600;font-size:0.92rem;cursor:pointer;transition:.2s}
+.btn-soft:hover{border-color:var(--green);color:var(--green-dark)}
+
+/* ---- topbar + strip ---- */
+.topbar{background:var(--cream);text-align:center;padding:14px 16px 10px}
+.topbar .brand{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:var(--green-dark);line-height:1;margin-bottom:9px}
+.topbar .brand img{width:30px;height:30px;border-radius:7px}
+.topbar .brand b{color:var(--green)}
+.topbar .rate{display:flex;align-items:center;justify-content:center;gap:7px;font-size:0.92rem;font-weight:600;color:var(--ink)}
+.topbar .stars{color:var(--gold);letter-spacing:1px;font-size:0.98rem}
+.topbar .rate small{color:var(--muted);font-weight:500}
+.strip{background:var(--green-dark);color:#fff;text-align:center;padding:13px 16px;font-size:1.0rem;font-weight:700;letter-spacing:.02em}
+.strip b{color:var(--mint)}
+@media(max-width:600px){.strip{font-size:0.88rem}}
+
+/* ---- hero (mørk grønn — ingen eksterne bilder) ---- */
+.hero{position:relative;padding:44px 0 56px;background:radial-gradient(115% 130% at 78% 12%,#24522f 0%,var(--green-dark) 55%,#0e2115 100%)}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(118,175,38,.30),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.04fr 0.96fr;gap:40px;align-items:start}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;margin:6px 0 16px}
+.hero h1 .hl{color:#a8d95c}
+.hero .lede{color:rgba(255,255,255,.82);margin-bottom:20px}
+.hero .lede b{color:#fff}
+.hero .blist{list-style:none;display:grid;gap:11px;margin:0 0 22px}
+.hero .blist li{display:flex;align-items:center;gap:11px;font-size:1.02rem;font-weight:600;color:#fff}
+.chk{width:22px;height:22px;border-radius:50%;background:var(--green);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.chk svg{width:12px;height:12px;stroke:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:0.86rem;color:rgba(255,255,255,.66)}
+.hero-trust b{color:#fff}
+@media(max-width:900px){
+  .hero{padding:30px 0 46px}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-copy{order:1}.hero-form{order:2}
+}
+@media(max-width:480px){.h-xl{font-size:1.75rem}}
+
+/* ---- formcard (ETT steg) ---- */
+.formcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px;box-shadow:var(--sh)}
+.formcard .fhead b{display:block;font-size:1.18rem;font-weight:800;letter-spacing:-0.01em;color:var(--green-dark)}
+.formcard .fhead span{display:block;font-size:0.85rem;color:var(--muted);margin:5px 0 12px}
+.field{margin-bottom:10px}
+.field label{display:block;font-size:0.78rem;font-weight:700;margin-bottom:4px}
+.field label .req{color:var(--green-deep)}
+.field .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--sand);overflow:hidden}
+.field .inp:focus-within{border-color:var(--green);background:#fff;box-shadow:0 0 0 4px rgba(118,175,38,.14)}
+.field input{flex:1;width:100%;padding:11px 13px;border:0;background:transparent;font-family:var(--mont);font-size:0.94rem;color:var(--ink)}
+.field input:focus{outline:none}
+.field textarea{flex:1;width:100%;padding:10px 13px;border:0;background:transparent;font-family:var(--mont);font-size:0.94rem;color:var(--ink);resize:vertical;min-height:56px;line-height:1.45}
+.field textarea:focus{outline:none}
+.field input::placeholder,.field textarea::placeholder{color:#9aa39a}
+.field .hint{font-size:0.73rem;color:var(--muted);margin-top:4px;display:block}
+.fgrid2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+@media(max-width:380px){.fgrid2{grid-template-columns:1fr}}
+.formcard .cta{width:100%;margin-top:6px;padding:14px 32px}
+.fmsg{display:none;background:var(--green-tint);border:1px solid var(--mint);color:#3e5d18;padding:13px 15px;border-radius:12px;font-size:0.9rem;margin-bottom:14px;font-weight:600}
+.formcard .fine{display:flex;flex-direction:column;gap:3px;font-size:0.74rem;color:var(--muted);margin-top:10px;text-align:center}
+.formcard .fine .stars{color:var(--gold);letter-spacing:1px}
+
+/* ---- trust bar ---- */
+.tbar{background:var(--white);border-bottom:1px solid var(--line)}
+.tbar-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;padding:26px 0}
+.tbar .n{font-size:1.7rem;font-weight:800;color:var(--green-dark);letter-spacing:-0.02em;line-height:1}
+.tbar .l{font-size:0.8rem;color:var(--muted);margin-top:6px}
+@media(max-width:900px){.tbar-inner{grid-template-columns:repeat(2,1fr);gap:22px 8px}}
+
+/* ---- split + feature-liste ---- */
+.split{display:grid;grid-template-columns:1fr 1.05fr;gap:46px;align-items:center}
+.split.rev .s-media{order:2}
+@media(max-width:880px){.split{grid-template-columns:1fr;gap:30px}.split.rev .s-media{order:0}}
+.feat{list-style:none;display:grid;gap:22px}
+.feat li{display:flex;gap:14px;align-items:flex-start}
+.feat .chk{margin-top:2px}
+.feat h4{font-size:1.12rem;font-weight:700;margin-bottom:3px}
+.feat p{font-size:0.98rem;color:var(--muted)}
+
+/* ---- rådgiver-kort (uten foto/navn) ---- */
+.advcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:38px 30px 32px;text-align:center;box-shadow:var(--sh)}
+.advcard .ring{width:110px;height:110px;border-radius:50%;background:var(--green-tint);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.advcard .ring svg{width:52px;height:52px;color:var(--green-deep)}
+.advcard b{display:block;font-size:1.3rem;font-weight:800;letter-spacing:-0.01em;color:var(--green-dark)}
+.advcard .role{display:block;font-size:0.88rem;font-weight:600;color:var(--green-deep);margin-top:3px}
+.advcard p{font-size:1rem;color:var(--muted);margin-top:14px;max-width:36ch;margin-left:auto;margin-right:auto}
+
+/* ---- pain points (rød X) ---- */
+.pain{display:grid;gap:14px;max-width:680px;margin:40px auto 0}
+.pain .row{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:var(--rs);padding:16px 20px;font-weight:600;font-size:1.02rem;box-shadow:var(--sh-sm);text-align:left}
+.pain .x{color:var(--red);font-size:1.2rem;font-weight:800;flex:none}
+
+/* ---- dark CTA band ---- */
+.darkband{background:var(--green-dark);color:#fff;border-radius:var(--r);padding:48px 40px;text-align:center;box-shadow:var(--sh);position:relative;overflow:hidden}
+.darkband::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(118,175,38,.35),transparent 70%)}
+.darkband .eyebrow{color:var(--mint)}
+.darkband h2{color:#fff;max-width:26ch;margin:14px auto 12px;position:relative}
+.darkband p{color:rgba(255,255,255,.85);max-width:52ch;margin:0 auto;font-size:1.04rem;position:relative}
+.darkband .cta{margin-top:26px;position:relative}
+.darkband .micro{font-size:0.8rem;color:rgba(255,255,255,.6);margin-top:14px;position:relative}
+@media(max-width:620px){.darkband{padding:42px 24px}}
+
+/* ---- steg ---- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;counter-reset:s}
+.step{position:relative;padding:26px 22px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-sm)}
+.step::before{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:1.05rem;margin-bottom:14px}
+.step h3{font-size:1.1rem;margin-bottom:7px;color:var(--green-dark)}
+.step p{font-size:0.95rem;color:var(--muted)}
+@media(max-width:880px){.steps{grid-template-columns:1fr}}
+
+/* ---- bransjer + ekskludering (fra v1) ---- */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;justify-content:center}
+.chip{background:var(--white);border:1px solid var(--line);border-radius:var(--pill);padding:11px 18px;font-weight:600;font-size:0.93rem;color:var(--green-dark);display:inline-flex;align-items:center;gap:8px}
+.chip svg{width:16px;height:16px;color:var(--green)}
+.excl{margin-top:26px;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--rs);padding:16px 18px;font-size:0.92rem;color:var(--muted);max-width:760px;margin-left:auto;margin-right:auto;text-align:left}
+.excl b{color:var(--ink)}
+
+/* ---- anmeldelser ---- */
+.rev-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;text-align:center;flex-direction:column}
+.rev-score{display:inline-flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--pill);padding:10px 20px;box-shadow:var(--sh-sm)}
+.rev-score .n{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em}
+.rev-score .stars{color:var(--gold);letter-spacing:1.5px}
+.rev-score small{color:var(--muted);font-weight:500}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+@media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
+.rev-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+.rev-card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.rev-card .stars{color:var(--gold);letter-spacing:1.5px;font-size:0.96rem}
+.rev-card .g{font-size:0.72rem;font-weight:700;color:var(--muted)}
+.rev-card p{font-size:0.98rem;color:var(--ink2);line-height:1.6;flex:1}
+.rev-by{margin-top:16px;border-top:1px solid var(--line);padding-top:13px}
+.rev-by b{font-weight:700;font-size:0.95rem;display:block;color:var(--green-dark)}
+.rev-by span{font-size:0.74rem;color:var(--muted)}
+
+/* ---- faq ---- */
+.faq{display:grid;gap:11px;max-width:840px;margin:42px auto 0}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:var(--rs);padding:4px 22px;transition:.2s}
+.faq details[open]{box-shadow:var(--sh-sm)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:700;font-size:1.06rem;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--green-dark)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{width:28px;height:28px;border-radius:50%;background:var(--green-tint);color:var(--green-deep);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:none;transition:.3s}
+.faq details[open] summary .pm{transform:rotate(45deg);background:var(--green);color:#fff}
+.faq .ans{padding:0 0 20px;color:var(--muted);font-size:0.98rem;max-width:72ch}
+
+/* ---- footer ---- */
+.footer{background:var(--green-dark);color:rgba(255,255,255,.65);font-size:0.88rem;text-align:center;padding:48px 0 36px}
+.footer .brand{display:inline-flex;align-items:center;gap:9px;font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:12px}
+.footer .brand img{width:28px;height:28px;border-radius:6px}
+.footer .brand b{color:var(--mint)}
+.footer .rate{display:block;color:#fff;font-weight:600;margin-bottom:4px}
+.footer .rate .stars{color:var(--gold);letter-spacing:1.5px}
+.footer .reg{margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ---- modal popup ---- */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(21,48,31,.55);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:.3s}
+.modal-overlay.show{opacity:1;pointer-events:auto}
+.modal{background:var(--cream);border-radius:24px;max-width:520px;width:100%;overflow:auto;max-height:92vh;box-shadow:0 50px 100px -30px rgba(0,0,0,.55);transform:translateY(20px) scale(.97);transition:.35s cubic-bezier(.2,.7,.2,1)}
+.modal-overlay.show .modal{transform:none}
+.modal .mbody{padding:34px 32px;position:relative}
+.modal .close{position:absolute;top:13px;right:15px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:0.95rem;color:var(--muted);transition:.2s}
+.modal .close:hover{background:var(--green-dark);color:#fff}
+@media(max-width:620px){.modal .mbody{padding:28px 22px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:.65s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar" id="top">
+  <span class="brand"><img src="https://generalfinans.no/wp-content/uploads/2022/03/cropped-klosser-logo-gf-270x270.jpg" alt="General Finans">General&nbsp;<b>Finans</b></span>
+  <div class="rate"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,9 / 5 <small>fra 200+ bedriftskunder</small></div>
+</div>
+
+<!-- ===== STRIP ===== -->
+<div class="strip">Ofte kredittsvar innen <b>&eacute;n virkedag</b> &middot; Uforpliktende tilbud &middot; N&aelig;ringsleasing siden <b>2006</b></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">N&aelig;ringsleasing av maskiner &amp; utstyr</span>
+        <h1 class="h-xl">Lease utstyret bedriften trenger &mdash; <span class="hl">uten &aring; binde opp kapital.</span></h1>
+        <p class="lede">Vi finansierer hele investeringen og henter de beste betingelsene fra flere finansieringskilder. Hos oss snakker du med en <b>ekte r&aring;dgiver</b> &mdash; og f&aring;r ofte svar p&aring; finansieringen innen <b>&eacute;n virkedag</b>.</p>
+        <ul class="blist">
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Ingen egenkapital &mdash; vi finansierer 100&nbsp;%</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Personlig r&aring;dgiver &mdash; ikke chatbot eller k&oslash;</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Ofte kredittsvar innen 1 virkedag</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 100&nbsp;% skattefradrag p&aring; leasingkostnaden</li>
+        </ul>
+        <div class="hero-trust">
+          <span><b>1 500+</b> bedriftskunder</span>
+          <span><b>1 mrd+</b> kr leaset</span>
+          <span><b>20 &aring;r</b> i bransjen</span>
+          <span><b>Hele Norge</b></span>
+        </div>
+      </div>
+
+      <!-- LEAD FORM (ETT steg — felter og name-attributter verbatim fra v1, Zapier avhenger av dem) -->
+      <div class="hero-form" id="tilbud">
+        <div class="formcard">
+          <div class="fhead">
+            <b>F&aring; et uforpliktende tilbud</b>
+            <span>Fortell oss kort hva du vil lease &mdash; s&aring; ringer en r&aring;dgiver deg. Tar 30 sekunder.</span>
+          </div>
+          <div class="fmsg" id="formMsg">Takk! Vi har mottatt foresp&oslash;rselen din, og en r&aring;dgiver tar kontakt snart.</div>
+          <form id="leadForm" novalidate>
+            <div class="field">
+              <label for="gf-kategori">Hva vil du lease &mdash; og omtrentlig bel&oslash;p? <span class="req">*</span></label>
+              <div class="inp"><textarea id="gf-kategori" name="kategori" rows="2" placeholder="F.eks. &laquo;CNC-maskin, ca. 350 000 kr&raquo; eller &laquo;komplett restaurantkj&oslash;kken, ca. 600 000 kr&raquo;" required></textarea></div>
+              <span class="hint">Skriv hva du vil lease og et omtrentlig bel&oslash;p &mdash; s&aring; finner vi riktig finansiering raskere.</span>
+            </div>
+            <div class="fgrid2">
+              <div class="field"><label for="gf-kontakt">Kontaktperson <span class="req">*</span></label><div class="inp"><input type="text" id="gf-kontakt" name="kontaktperson" placeholder="Navn" required></div></div>
+              <div class="field"><label for="gf-telefon">Telefon <span class="req">*</span></label><div class="inp"><input type="tel" id="gf-telefon" name="telefon" placeholder="Mobilnummer" required></div></div>
+            </div>
+            <div class="fgrid2">
+              <div class="field"><label for="gf-bedrift">Bedriftsnavn <span class="req">*</span></label><div class="inp"><input type="text" id="gf-bedrift" name="bedriftsnavn" placeholder="Minbedrift AS" required></div></div>
+              <div class="field"><label for="gf-orgnr">Org.nr <span class="req">*</span></label><div class="inp"><input type="text" id="gf-orgnr" name="orgnr" placeholder="9 siffer" required></div></div>
+            </div>
+            <div class="field"><label for="gf-epost">E-post <span class="req">*</span></label><div class="inp"><input type="email" id="gf-epost" name="epost" placeholder="din@bedrift.no" required></div></div>
+            <button type="submit" class="cta"><span class="t">F&aring; mitt leasingtilbud<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Uforpliktende &mdash; ofte kredittsvar innen &eacute;n virkedag</span></button>
+          </form>
+          <div class="fine">
+            <span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,9/5 fra 200+ bedrifter &middot; For bedrifter med org.nr.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="tbar">
+  <div class="wrap tbar-inner">
+    <div><div class="n">1 500+</div><div class="l">bedriftskunder</div></div>
+    <div><div class="n">1 mrd+</div><div class="l">kroner leaset</div></div>
+    <div><div class="n">4,9/5</div><div class="l">fra 200+ kunder</div></div>
+    <div><div class="n">2006</div><div class="l">aktiv siden</div></div>
+  </div>
+</div>
+
+<!-- ===== HVORFOR VELGE OSS (split: rådgiver-kort + features) ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="s-media reveal">
+        <div class="advcard">
+          <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="7" r="4"/><path d="M21 8l-4 4-2-2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <b>Din personlige r&aring;dgiver</b>
+          <span class="role">&Eacute;n kontaktperson &mdash; hele veien</span>
+          <p>En r&aring;dgiver som kjenner saken din, henter tilbud fra flere finansieringskilder og jobber aktivt for &aring; f&aring; den i m&aring;l.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Hvorfor velge oss</span>
+        <h2 class="h-lg" style="margin:12px 0 8px">Finansiering med et menneske i andre enden</h2>
+        <p class="lede" style="margin-bottom:30px">De store akt&oslash;rene har gjort seg vanskelige &aring; f&aring; tak i &mdash; chatbot, k&oslash;lapp og standardmail. Hos General Finans f&aring;r du en r&aring;dgiver som kjenner saken din og jobber aktivt for &aring; f&aring; den i m&aring;l.</p>
+        <ul class="feat">
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h4>En ekte r&aring;dgiver &mdash; ikke en robot</h4><p>Du slipper chatbot, k&oslash;lapp og standardsvar. Hos oss snakker du med en person som kjenner saken din og f&oslash;lger den helt i m&aring;l.</p></div></li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h4>Raske beslutninger</h4><p>Vi jobber aktivt med saken din mens andre lar deg vente. Som regel har du et kredittsvar innen &eacute;n virkedag.</p></div></li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h4>Flere finansieringskilder, ett kontaktpunkt</h4><p>Som uavhengig leasingpartner henter vi tilbud fra flere banker og finansselskap &mdash; og finner en l&oslash;sning ogs&aring; n&aring;r din egen bank sier &laquo;vent&raquo;.</p></div></li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h4>Ingen egenkapital, forutsigbar pris</h4><p>Vi finansierer hele investeringen. Du beholder likviditeten og betaler en fast m&aring;nedspris du enkelt kan budsjettere med.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN POINTS ===== -->
+<section class="section" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap center">
+    <span class="eyebrow">Slipp bank-m&oslash;llen</span>
+    <h2 class="h-lg" style="margin-top:12px">Utstyret p&aring; plass &mdash; uten omveier&hellip;</h2>
+    <div class="pain">
+      <div class="row reveal"><span class="x">&#10005;</span> Ikke bind opp kapitalen bedriften trenger til drift og vekst</div>
+      <div class="row reveal"><span class="x">&#10005;</span> Ingen chatbot, k&oslash;lapp eller standardmail &mdash; du snakker med et menneske</div>
+      <div class="row reveal"><span class="x">&#10005;</span> Ikke la investeringen st&aring; p&aring; vent fordi &eacute;n bank sier &laquo;vent&raquo;</div>
+    </div>
+    <div style="margin-top:34px" class="reveal"><a href="#tilbud" class="cta jump"><span class="t">F&aring; uforpliktende tilbud<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Tar 30 sekunder &mdash; helt uforpliktende</span></a></div>
+  </div>
+</section>
+
+<!-- ===== SLIK FOREGÅR DET ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="max-width:620px;margin:0 auto">
+      <span class="eyebrow">S&aring; enkelt er det</span>
+      <h2 class="h-lg" style="margin-top:12px">Fra foresp&oslash;rsel til signert avtale &mdash; uten papirm&oslash;lle</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Send foresp&oslash;rsel</h3>
+        <p>Fyll ut skjemaet og fortell kort hva du trenger finansiert. Det tar 30 sekunder.</p>
+      </div>
+      <div class="step reveal">
+        <h3>F&aring; skreddersydd tilbud</h3>
+        <p>En r&aring;dgiver ringer deg og henter de beste betingelsene &mdash; tilpasset bedriften og situasjonen din.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Signer digitalt</h3>
+        <p>Godkjenn avtalen digitalt. Vi ordner resten &mdash; du fokuserer p&aring; drift.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px;text-align:center" class="reveal">
+      <a href="#tilbud" class="cta jump"><span class="t">F&aring; uforpliktende tilbud<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Ofte kredittsvar innen &eacute;n virkedag</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DARK CTA BAND ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="darkband reveal">
+      <span class="eyebrow">&mdash; Uforpliktende tilbud &mdash;</span>
+      <h2 class="h-lg">Fortell oss hva du vil lease &mdash; s&aring; ringer en r&aring;dgiver deg</h2>
+      <p>Vi henter tilbud fra flere finansieringskilder og finner en l&oslash;sning tilpasset bedriften din. Som regel har du et kredittsvar innen &eacute;n virkedag.</p>
+      <a href="#tilbud" class="cta lg jump"><span class="t">F&aring; uforpliktende tilbud<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Tar 30 sekunder &mdash; helt uforpliktende</span></a>
+      <p class="micro">For bedrifter med org.nr &middot; all finansiering forutsetter kredittvurdering</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRANSJER ===== -->
+<section class="section" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap center">
+    <div class="reveal" style="max-width:640px;margin:0 auto">
+      <span class="eyebrow">Vi finansierer utstyr i alle bransjer</span>
+      <h2 class="h-lg" style="margin:12px 0 10px">Maskiner og utstyr til bedrifter med org.nr.</h2>
+      <p class="lede" style="margin:0 auto">Enten det er produksjon, helse, IT, transport eller restaurant &mdash; vi finansierer det meste av utstyr og maskiner n&aelig;ringslivet trenger.</p>
+    </div>
+    <div class="chips reveal">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Produksjonsutstyr</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Verksted &amp; verkt&oslash;y</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Medisinsk &amp; helse</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Tannlege &amp; klinikk</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> IT- &amp; kontorutstyr</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Restaurant &amp; kj&oslash;kken</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Trening &amp; velv&aelig;re</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Transport &amp; logistikk</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Inventar &amp; innredning</span>
+    </div>
+    <div class="excl reveal">
+      <b>Vi tilbyr ikke:</b> leasing av person-/firmabiler, privatleasing, forbruksl&aring;n eller bill&aring;n. Landbruks-, g&aring;rds- og anleggsmaskiner finansierer vi i begrenset grad. Leasing er forbeholdt registrerte bedrifter (org.nr), og all finansiering forutsetter en kredittvurdering.
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANMELDELSER (verbatim fra v1) ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="rev-head reveal">
+      <span class="eyebrow muted">Det sier kundene v&aring;re</span>
+      <h2 class="h-lg center" style="margin:6px 0 16px">Over 1 500 bedrifter har valgt General Finans</h2>
+      <div class="rev-score"><span class="n">4,9</span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>fra 200+ bedriftskunder</small></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g">Google-anmeldelse</span></div>
+        <p>&laquo;Jeg hadde en kjempegod opplevelse med General Finans i forbindelse med leasing. De var b&aring;de billige og raske, og hele prosessen gikk knirkefritt. Kommunikasjonen var tydelig og effektiv, og jeg f&oslash;lte meg godt ivaretatt hele veien. Dette er virkelig et seri&oslash;st firma med fokus p&aring; kundeservice &ndash; jeg opplevde topp service fra start til slutt. Anbefales p&aring; det sterkeste!&raquo;</p>
+        <div class="rev-by"><b>Trond Elvestad</b><span>Google-anmeldelse</span></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>&laquo;Endelig en finanspartner som forst&aring;r at vi trenger fleksibilitet. Rask prosess, personlig r&aring;dgiver, og vi fikk tilbudet samme dag.&raquo;</p>
+        <div class="rev-by"><b>Linda S.</b><span>Daglig leder</span></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>&laquo;Vi skulle lease nytt utstyr til klinikken og fikk svar utrolig raskt. En personlig r&aring;dgiver som faktisk forsto behovene v&aring;re &mdash; ingen k&oslash;, ingen chatbot. Veldig forn&oslash;yd.&raquo;</p>
+        <div class="rev-by"><b>Marianne R.</b><span>Tannklinikk</span></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>&laquo;Vi har leaset produksjonsutstyr gjennom General Finans i 8 &aring;r n&aring;. Alltid ryddig, alltid tilgjengelige. Profesjonelt fra start til slutt.&raquo;</p>
+        <div class="rev-by"><b>Morten K.</b><span>Produksjonsbedrift</span></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>&laquo;Vi m&aring;tte oppgradere kj&oslash;kkenet f&oslash;r &aring;pning. General Finans ordnet finansieringen p&aring; rekordtid og fulgte opp hele veien. Akkurat den servicen vi trengte.&raquo;</p>
+        <div class="rev-by"><b>Henrik B.</b><span>Restaurantdrift</span></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="top"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p>&laquo;Trengte nytt IT- og kontorutstyr raskt da vi vokste. Enkel prosess, ingen egenkapital, og en r&aring;dgiver som tok telefonen hver gang. Anbefales.&raquo;</p>
+        <div class="rev-by"><b>Andreas N.</b><span>Daglig leder, IT-selskap</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Uforpliktende &middot; ofte svar innen &eacute;n virkedag</span>
+    <h2 class="h-lg" style="margin:12px 0 24px">Klar for &aring; investere i vekst?</h2>
+    <a href="#tilbud" class="cta lg jump"><span class="t">F&aring; uforpliktende tilbud<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Tar 30 sekunder &mdash; helt uforpliktende</span></a>
+  </div>
+</section>
+
+<!-- ===== FAQ (verbatim fra v1) ===== -->
+<section class="section" style="background:var(--white);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="center" style="max-width:560px;margin:0 auto">
+      <span class="eyebrow">Ofte stilte sp&oslash;rsm&aring;l</span>
+      <h2 class="h-lg" style="margin-top:12px">Alt du lurer p&aring; om n&aelig;ringsleasing</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Er tilbudet uforpliktende?<span class="pm">+</span></summary><div class="ans">Ja. Du fyller ut skjemaet, s&aring; ringer en r&aring;dgiver deg med et forslag tilpasset bedriften din. Du bestemmer selv om du vil g&aring; videre &mdash; helt uten forpliktelser.</div></details>
+      <details><summary>Hvor raskt f&aring;r jeg svar?<span class="pm">+</span></summary><div class="ans">Vi jobber aktivt med saken din fra den kommer inn. Som regel har du et kredittsvar innen &eacute;n virkedag &mdash; ofte raskere.</div></details>
+      <details><summary>Hvem kan lease gjennom dere?<span class="pm">+</span></summary><div class="ans">Leasing er forbeholdt registrerte bedrifter med org.nr &mdash; alle selskapsformer (AS, ENK m.fl.). Vi tilbyr ikke privatleasing, person-/firmabiler eller forbruksl&aring;n.</div></details>
+      <details><summary>Trenger jeg &aring; betale egenkapital?<span class="pm">+</span></summary><div class="ans">Nei. Vi finansierer normalt hele investeringen, slik at du beholder likviditeten og slipper &aring; binde opp kapital i utstyret.</div></details>
+      <details><summary>Kan jeg trekke fra kostnadene?<span class="pm">+</span></summary><div class="ans">Leasingkostnaden er 100&nbsp;% fradragsberettiget og reduserer skattbar inntekt mens du bruker utstyret. Snakk med r&aring;dgiveren din for detaljene rundt din situasjon.</div></details>
+      <details><summary>Hva skjer n&aring;r avtalen utl&oslash;per?<span class="pm">+</span></summary><div class="ans">Du kan typisk kj&oslash;pe ut utstyret, forlenge avtalen eller bytte til nytt &mdash; slik at du unng&aring;r &aring; sitte igjen med utdatert utstyr. R&aring;dgiveren g&aring;r gjennom alternativene med deg.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <span class="brand"><img src="https://generalfinans.no/wp-content/uploads/2022/03/cropped-klosser-logo-gf-270x270.jpg" alt="General Finans">General&nbsp;<b>Finans</b></span>
+    <span class="rate"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4,9 / 5 fra 200+ bedriftskunder</span>
+    <p>N&aelig;ringsleasing av maskiner og utstyr til norske bedrifter &mdash; siden 2006.<br>Personlig r&aring;dgivning, raske beslutninger og tilbud fra flere finansieringskilder.</p>
+    <div class="reg">&copy; General Finans &middot; Trondheim, Norge &middot; N&aelig;ringsleasing siden 2006<br>Leasing forbeholdt bedrifter med org.nr &middot; All finansiering forutsetter kredittvurdering</div>
+  </div>
+</footer>
+
+<!-- ===== TIMED POPUP (15s, én gang per økt — kun snarvei til skjemaet, IKKE eget skjema) ===== -->
+<div class="modal-overlay" id="popup" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="F&aring; et uforpliktende leasingtilbud">
+    <div class="mbody">
+      <button class="close" id="popupClose" aria-label="Lukk">&#10005;</button>
+      <div style="text-align:center">
+        <h3 style="font-size:2.15rem;line-height:1.03;margin:4px 0 4px">F&oslash;r du g&aring;r!</h3>
+        <p style="font-size:1.02rem;color:var(--muted);margin-bottom:20px">F&aring; et uforpliktende leasingtilbud &mdash; en r&aring;dgiver ringer deg</p>
+      </div>
+      <ul style="list-style:none;display:grid;gap:11px;margin:0 auto 22px;max-width:380px;text-align:left">
+        <li style="display:flex;align-items:flex-start;gap:11px;font-size:0.98rem;font-weight:600;color:var(--ink2)"><span class="chk" style="margin-top:2px"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Ofte kredittsvar innen <b>&eacute;n virkedag</b></span></li>
+        <li style="display:flex;align-items:flex-start;gap:11px;font-size:0.98rem;font-weight:600;color:var(--ink2)"><span class="chk" style="margin-top:2px"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>Tilbud fra flere finansieringskilder &mdash; ett kontaktpunkt</span></li>
+      </ul>
+      <div style="text-align:center">
+        <button type="button" class="cta lg" id="popupGo" style="width:100%"><span class="t">G&aring; til skjemaet<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="sub">Tar 30 sekunder &mdash; helt uforpliktende</span></button>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:14px">Vi deler aldri opplysningene dine med noen andre.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== Scroll reveal ===== */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* ===== Smooth scroll for interne hopp ===== */
+function scrollToY(y,dur){var s=window.pageYOffset,d=y-s,t0=null;function f(t){if(t0===null)t0=t;var p=Math.min((t-t0)/dur,1);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;window.scrollTo(0,s+d*e);if(p<1)requestAnimationFrame(f);}requestAnimationFrame(f);}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href');if(!h||h.length<2)return;var t=document.querySelector(h);if(!t)return;e.preventDefault();scrollToY(Math.max(0,t.getBoundingClientRect().top+window.pageYOffset-10),500);});});
+
+/* ===== Google Ads klikk-ID-fangst (UENDRET fra v1) =====
+   Fanger gclid/wbraid/gbraid fra URL ved landing og lagrer dem i 90 dager.
+   Sendes med i lead-payloaden → Zapier kan registrere offline-konvertering i Google Ads
+   uavhengig av Cookiebot/samtykke. */
+function gfCaptureClickIds(){
+  try{
+    var p=new URLSearchParams(window.location.search);
+    ['gclid','wbraid','gbraid'].forEach(function(k){
+      var v=p.get(k);
+      if(v){try{localStorage.setItem('gf_'+k,JSON.stringify({v:v,t:Date.now()}));}catch(e){}}
+    });
+  }catch(e){}
+}
+function gfGetClickId(k){
+  try{
+    var u=new URLSearchParams(window.location.search).get(k);
+    if(u)return u;
+    var s=localStorage.getItem('gf_'+k);
+    if(s){var o=JSON.parse(s);if(o&&o.v&&(Date.now()-o.t)<7776e6)return o.v;} /* 90 dager */
+  }catch(e){}
+  return '';
+}
+gfCaptureClickIds();
+
+/* ===== Lead submit → Zapier + Make (UENDRET fra v1: samme webhooks + payload-nøkler) =====
+   Payload-nøkler: kontaktperson/bedriftsnavn/telefon/epost/orgnr/kategori/kilde/tidspunkt/side_url
+   + gclid/wbraid/gbraid for offline conversion. keepalive sikrer at requesten lander ved redirect. */
+var ZAPIER_WEBHOOK_URL='https://hooks.zapier.com/hooks/catch/21180646/2cnrqbj/';
+var MAKE_WEBHOOK_URL='https://hook.eu1.make.com/7g4wjme54ujzh78mx4qbm3pq9e10i837';
+var TAKK_URL='https://generalfinans.no/takk/';
+
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.kontaktperson.value||!f.telefon.value||!f.epost.value||!f.kategori.value||!f.bedriftsnavn.value||!f.orgnr.value){
+    f.reportValidity();return;
+  }
+  var data={
+    kontaktperson: f.kontaktperson.value.trim(),
+    bedriftsnavn:  f.bedriftsnavn.value.trim(),
+    telefon:       f.telefon.value.trim(),
+    epost:         f.epost.value.trim(),
+    orgnr:         f.orgnr.value.replace(/\s/g,''),
+    kategori:      f.kategori.value.trim(),
+    kilde:         'Landingsside — General Finans',
+    tidspunkt:     new Date().toISOString(),
+    side_url:      window.location.href,
+    gclid:         gfGetClickId('gclid'),
+    wbraid:        gfGetClickId('wbraid'),
+    gbraid:        gfGetClickId('gbraid')
+  };
+  /* urlencoded + sendBeacon: Zapier/Make parser hvert felt natively. (no-cors stripper JSON-content-type
+     → mottaker får én rå tekst-blob og feltene blir tomme → leads "forsvinner".) Poster til BEGGE sluk. */
+  var body=new URLSearchParams();
+  for(var k in data){ if(data.hasOwnProperty(k)) body.append(k, data[k]==null?'':data[k]); }
+  function gfPost(url){
+    if(!url) return;
+    try{ if(navigator.sendBeacon && navigator.sendBeacon(url, body)) return; }catch(e){}
+    try{ fetch(url,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}); }catch(e){}
+  }
+  gfPost(ZAPIER_WEBHOOK_URL);   /* Google Ads offline-conv pipeline */
+  gfPost(MAKE_WEBHOOK_URL);     /* e-post til post@generalfinans.no + CRM-sheet */
+  try{sessionStorage.setItem('gf_lead_done','1');}catch(err){}
+  var msg=document.getElementById('formMsg');if(msg)msg.style.display='block';
+  /* Google Ads-conversion fyres på takkesiden (takk.html) — derfor MÅ klikk-ID-ene
+     med i redirect-URL-en: med Consent Mode 'denied' (cookieless) er gclid i URL
+     eneste kobling Google har mellom annonseklikket og konverteringen. */
+  setTimeout(function(){
+    var q=[];
+    ['gclid','wbraid','gbraid'].forEach(function(k){var v=gfGetClickId(k);if(v)q.push(k+'='+encodeURIComponent(v));});
+    window.location.href=TAKK_URL+(q.length?(TAKK_URL.indexOf('?')>-1?'&':'?')+q.join('&'):'');
+  },600);
+});
+
+/* ===== Timed popup (15s, én gang per økt — Frøyd-mønster, ingen sticky bar) ===== */
+var overlay=document.getElementById('popup');
+if(overlay){
+  var popupSeen=function(){try{return sessionStorage.getItem('gf_popup_done')||sessionStorage.getItem('gf_lead_done');}catch(e){return false;}};
+  var openPopup=function(){if(popupSeen())return;overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';};
+  var closePopup=function(){overlay.classList.remove('show');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';try{sessionStorage.setItem('gf_popup_done','1');}catch(e){}};
+  setTimeout(openPopup,15000);
+  var pc=document.getElementById('popupClose');if(pc)pc.addEventListener('click',closePopup);
+  var pg=document.getElementById('popupGo');
+  if(pg)pg.addEventListener('click',function(){
+    closePopup();
+    var fc=document.querySelector('.formcard');
+    if(fc){scrollToY(Math.max(0,fc.getBoundingClientRect().top+window.pageYOffset-20),500);
+      var first=document.getElementById('gf-kategori');if(first)setTimeout(function(){first.focus();},550);}
+  });
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closePopup();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('show'))closePopup();});
+}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Er tilbudet uforpliktende?","acceptedAnswer":{"@type":"Answer","text":"Ja. Du fyller ut skjemaet, så ringer en rådgiver deg med et forslag tilpasset bedriften din. Du bestemmer selv om du vil gå videre — helt uten forpliktelser."}},
+{"@type":"Question","name":"Hvor raskt får jeg svar?","acceptedAnswer":{"@type":"Answer","text":"Vi jobber aktivt med saken din fra den kommer inn. Som regel har du et kredittsvar innen én virkedag — ofte raskere."}},
+{"@type":"Question","name":"Hvem kan lease gjennom dere?","acceptedAnswer":{"@type":"Answer","text":"Leasing er forbeholdt registrerte bedrifter med org.nr — alle selskapsformer (AS, ENK m.fl.). Vi tilbyr ikke privatleasing, person-/firmabiler eller forbrukslån."}},
+{"@type":"Question","name":"Trenger jeg å betale egenkapital?","acceptedAnswer":{"@type":"Answer","text":"Nei. Vi finansierer normalt hele investeringen, slik at du beholder likviditeten og slipper å binde opp kapital i utstyret."}},
+{"@type":"Question","name":"Kan jeg trekke fra kostnadene?","acceptedAnswer":{"@type":"Answer","text":"Leasingkostnaden er 100 % fradragsberettiget og reduserer skattbar inntekt mens du bruker utstyret."}},
+{"@type":"Question","name":"Hva skjer når avtalen utløper?","acceptedAnswer":{"@type":"Answer","text":"Du kan typisk kjøpe ut utstyret, forlenge avtalen eller bytte til nytt — slik at du unngår å sitte igjen med utdatert utstyr."}}
+]}
+</script>
+</body>
+</html>
