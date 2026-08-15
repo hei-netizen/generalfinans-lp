@@ -670,10 +670,11 @@ function gfGetClickId(k){
 }
 gfCaptureClickIds();
 
-/* ===== Lead submit → Zapier + Make (UENDRET fra v1: samme webhooks + payload-nøkler) =====
+/* ===== Lead submit → Make (scenario 6234320: sheet-rad + e-post til post@generalfinans.no) =====
    Payload-nøkler: kontaktperson/bedriftsnavn/telefon/epost/orgnr/kategori/kilde/tidspunkt/side_url
-   + gclid/wbraid/gbraid for offline conversion. keepalive sikrer at requesten lander ved redirect. */
-var ZAPIER_WEBHOOK_URL='https://hooks.zapier.com/hooks/catch/21180646/2cnrqbj/';
+   + gclid/wbraid/gbraid. keepalive sikrer at requesten lander ved redirect.
+   Zapier-webhooken FJERNET 15.08.2026 (Victors OK) — offline-conv-pipelinen der ble aldri
+   fullført (0 conv); konverteringer måles av web-taggen på takk-siden. Helt Make nå. */
 var MAKE_WEBHOOK_URL='https://hook.eu1.make.com/7g4wjme54ujzh78mx4qbm3pq9e10i837';
 var TAKK_URL='https://generalfinans.no/takk/';
 
@@ -706,8 +707,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     try{ if(navigator.sendBeacon && navigator.sendBeacon(url, body)) return; }catch(e){}
     try{ fetch(url,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}); }catch(e){}
   }
-  gfPost(ZAPIER_WEBHOOK_URL);   /* Google Ads offline-conv pipeline */
-  gfPost(MAKE_WEBHOOK_URL);     /* e-post til post@generalfinans.no + CRM-sheet */
+  gfPost(MAKE_WEBHOOK_URL);     /* Make: e-post til post@generalfinans.no + CRM-sheet-rad */
   try{sessionStorage.setItem('gf_lead_done','1');}catch(err){}
   var msg=document.getElementById('formMsg');if(msg)msg.style.display='block';
   /* Google Ads-conversion fyres på takkesiden (takk.html) — derfor MÅ klikk-ID-ene
