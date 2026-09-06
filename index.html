@@ -106,6 +106,10 @@ h1,h2,h3,h4{font-family:var(--mont);font-weight:800;line-height:1.08;letter-spac
 .hero .chk{background:var(--gold-acc)}
 .hero .offer-note{color:#fff;text-shadow:0 1px 8px rgba(14,33,21,.5)}
 .hero .offer-note span{color:rgba(255,255,255,.85)}
+.hero .offer-note.nobil{margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hero .offer-note.nobil .x{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:.72rem;font-weight:800;flex:0 0 20px}
+.hero .offer-note.nobil b{color:#fff}
+.fhead .nobil-f{color:var(--red);font-weight:700}
 .hero-grid{display:grid;grid-template-columns:1.04fr 0.96fr;gap:40px;align-items:start}
 .hero h1{margin:4px 0 18px}
 .hero .blist{list-style:none;display:grid;gap:11px;margin:0 0 22px}
@@ -333,6 +337,7 @@ h1,h2,h3,h4,h5,h6,button,.btn,.cta{text-transform:none!important}
           </div>
         </div>
         <p class="offer-note">100&nbsp;% skattefradrag p&aring; leasingkostnaden &mdash; <span>fast m&aring;nedspris du kan budsjettere med</span></p>
+        <p class="offer-note nobil"><span class="x">&#10005;</span> <b>Vi leaser ikke ut biler eller varebiler</b> <span>&mdash; kun maskiner, utstyr, inventar og IT</span></p>
       </div>
 
       <!-- LEAD FORM (ETT steg — felter og name-attributter verbatim fra v1, Zapier avhenger av dem) -->
@@ -340,7 +345,7 @@ h1,h2,h3,h4,h5,h6,button,.btn,.cta{text-transform:none!important}
         <div class="formcard">
           <div class="fhead">
             <b>F&aring; et uforpliktende tilbud</b>
-            <span>Fortell oss kort hva du vil lease &mdash; s&aring; ringer en r&aring;dgiver deg. Tar 30 sekunder.</span>
+            <span>Fortell oss kort hva du vil lease &mdash; s&aring; ringer en r&aring;dgiver deg. Tar 30 sekunder. <b class="nobil-f">Gjelder ikke bil eller varebil.</b></span>
           </div>
           <div class="fmsg" id="formMsg">Takk! Vi har mottatt foresp&oslash;rselen din, og en r&aring;dgiver tar kontakt snart.</div>
           <form id="leadForm" novalidate>
