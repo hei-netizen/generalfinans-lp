@@ -261,6 +261,9 @@ h1,h2,h3,h4{font-family:var(--mont);font-weight:800;line-height:1.08;letter-spac
 .modal .close:hover{background:var(--forest);color:#fff}
 @media(max-width:620px){.modal .mbody{padding:28px 22px}}
 
+/* WordPress/Astra: nøytraliser temaets capitalize på overskrifter og knapper */
+h1,h2,h3,h4,h5,h6,button,.btn,.cta{text-transform:none!important}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:.65s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -645,7 +648,7 @@ function gfGetClickId(k){
     var u=new URLSearchParams(window.location.search).get(k);
     if(u)return u;
     var s=localStorage.getItem('gf_'+k);
-    if(s){var o=JSON.parse(s);if(o&&o.v&&(Date.now()-o.t)<7776e6)return o.v;} /* 90 dager */
+    if(s){var o=JSON.parse(s);if(o){if(o.v){if((Date.now()-o.t)<7776e6)return o.v;}}} /* 90 dager */
   }catch(e){}
   return '';
 }
@@ -685,7 +688,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   for(var k in data){ if(data.hasOwnProperty(k)) body.append(k, data[k]==null?'':data[k]); }
   function gfPost(url){
     if(!url) return;
-    try{ if(navigator.sendBeacon && navigator.sendBeacon(url, body)) return; }catch(e){}
+    try{ if(navigator.sendBeacon){if(navigator.sendBeacon(url, body))return;} }catch(e){}
     try{ fetch(url,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}); }catch(e){}
   }
   gfPost(MAKE_WEBHOOK_URL);     /* Make: e-post til post@generalfinans.no + CRM-sheet-rad */
@@ -697,7 +700,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   setTimeout(function(){
     var q=[];
     ['gclid','wbraid','gbraid'].forEach(function(k){var v=gfGetClickId(k);if(v)q.push(k+'='+encodeURIComponent(v));});
-    window.location.href=TAKK_URL+(q.length?(TAKK_URL.indexOf('?')>-1?'&':'?')+q.join('&'):'');
+    window.location.href=TAKK_URL+(q.length?(TAKK_URL.indexOf('?')>-1?String.fromCharCode(38):'?')+q.join(String.fromCharCode(38)):'');
   },600);
 });
 
@@ -717,7 +720,7 @@ if(overlay){
       var first=document.getElementById('gf-kategori');if(first)setTimeout(function(){first.focus();},550);}
   });
   overlay.addEventListener('click',function(e){if(e.target===overlay)closePopup();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('show'))closePopup();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(overlay.classList.contains('show'))closePopup();}});
 }
 </script>
 
